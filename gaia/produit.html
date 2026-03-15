@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Baume nettoyant hydratant | Gaia Cosmétiques</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="product.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <p>Rayonnez en douceur. Affirmez votre confiance.</p>
+</div>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<main class="pd-page">
+
+<!-- ================= HERO ================= -->
+<section class="pd-hero">
+  <div class="container pd-hero-grid">
+
+    <!-- IMAGE -->
+    <div class="pd-image">
+      <img src="product-2.jpg" alt="Baume nettoyant hydratant">
+    </div>
+
+    <!-- INFO -->
+    <div class="pd-info">
+      <span class="pd-brand">The Purest Solutions</span>
+      <h1>Baume nettoyant hydratant & antioxydant</h1>
+
+      <p class="pd-short">
+        Nettoie en profondeur, apaise la peau et renforce la barrière cutanée.
+        Convient aux peaux sensibles et sèches.
+      </p>
+
+      <div class="pd-rating">
+        ★★★★★ <span>(4.9)</span>
+      </div>
+
+      <div class="pd-price">4 100 DA</div>
+
+      <div class="pd-actions">
+        <button class="pd-btn primary">Ajouter au panier</button>
+        <button class="pd-btn ghost">Acheter maintenant</button>
+      </div>
+
+      <div class="pd-tags">
+        <span>Peaux sensibles</span>
+        <span>Hydratant</span>
+        <span>Antioxydant</span>
+        <span>85g</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CONTENT ================= -->
+<section class="pd-content container">
+
+  <!-- DESCRIPTION -->
+  <div class="pd-block">
+    <h2>Description</h2>
+    <p>
+      Ce baume nettoyant visage élimine efficacement le maquillage et les impuretés
+      tout en respectant l’équilibre naturel de la peau.
+      Grâce à l’huile de babassu et à la Centella Asiatica, il apaise, hydrate
+      et protège la barrière cutanée.
+    </p>
+  </div>
+
+  <!-- ACTIFS -->
+  <div class="pd-block">
+    <h2>Contenu actif</h2>
+
+    <div class="pd-actifs">
+      <div>
+        <strong>Centella Asiatica</strong>
+        <span>Apaisante & régénérante</span>
+      </div>
+      <div>
+        <strong>Huile de Babassu</strong>
+        <span>Antioxydante & protectrice</span>
+      </div>
+      <div>
+        <strong>Huile de Macadamia</strong>
+        <span>Hydratation profonde</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BENEFICES -->
+  <div class="pd-block">
+    <h2>Bénéfices</h2>
+    <ul class="pd-list">
+      <li>Nettoyage doux et profond</li>
+      <li>Renforce la barrière cutanée</li>
+      <li>Hydrate et apaise</li>
+      <li>Effet lumineux naturel</li>
+      <li>Convient à tous types de peau</li>
+    </ul>
+  </div>
+
+  <!-- POUR QUI -->
+  <div class="pd-block">
+    <h2>Pour qui ?</h2>
+    <div class="pd-badges">
+      <span>Peau sensible</span>
+      <span>Peau sèche</span>
+      <span>Peau normale</span>
+      <span>Peau mixte</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- CTA -->
+<section class="pd-cta">
+  <p>
+    ✨ Une peau propre, apaisée et éclatante dès la première utilisation.
+  </p>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<!-- BOTTOM NAV -->
+<div id="bottom-nav"></div>
+
+<!-- ================= JS ================= -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  fetch("partials/header.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("header").innerHTML = html;
+      lucide.createIcons();
+    });
+
+  fetch("partials/footer.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("footer").innerHTML = html;
+    });
+
+  fetch("partials/bottom-nav.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("bottom-nav").innerHTML = html;
+      lucide.createIcons();
+    });
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Boutique | gaia.cosmétiques</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="boutique.css">
+    <link rel="stylesheet" href="product.css">
+
+
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <p>Rayonnez en douceur. Affirmez votre confiance.</p>
+  </div>
+   
+  <!-- HEADER -->
+  <div id="header"></div>
+<div id="hero"></div>
+<div id="bottom-nav"></div>
+
+  <!-- HERO -->
+  <section class="boutique-hero">
+    <div class="container">
+      <h1>Notre Boutique</h1>
+      <p>Des soins capillaires naturels pensés pour révéler votre beauté.</p>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main class="boutique-page">
+
+    <!-- FILTER -->
+    <div class="container">
+      <div class="boutique-filter">
+
+        <select data-filter="type">
+          <option value="all">Tous les produits</option>
+          <option value="shampoo">Shampoings</option>
+          <option value="mask">Masques</option>
+          <option value="serum">Sérums</option>
+        </select>
+
+        <select data-filter="hair">
+          <option value="all">Type de cheveux</option>
+          <option value="sec">Cheveux secs</option>
+          <option value="gras">Cheveux gras</option>
+          <option value="abimes">Cheveux abîmés</option>
+        </select>
+
+      </div>
+    </div>
+
+    <!-- PRODUCTS -->
+    <section class="boutique-products">
+      <div class="container boutique-products-grid">
+
+        <!-- PRODUIT 1 -->
+        <a href="produit.html"
+           class="boutique-card"
+           data-type="shampoo"
+           data-hair="sec abimes">
+
+<span class="boutique-badge new" style="
+    display: none;
+">Nouveau</span><span class="boutique-badge new" style="
+    display: none;
+">Nouveau</span>
+          <div class="boutique-image">
+            <img src="product-1.jpg" alt="Shampooing nourrissant">
+          </div>
+
+          <h3>Shampooing nourrissant</h3>
+          <span class="boutique-price">2200 DA</span>
+          <button class="boutique-btn-cart">Ajouter au panier</button>
+        </a>
+
+        <!-- PRODUIT 2 -->
+        <a href="produit.html"
+           class="boutique-card"
+           data-type="mask"
+           data-hair="abimes">
+
+<span class="boutique-badge best" style="
+    display: none;
+">Best-seller</span>
+          <div class="boutique-image">
+            <img src="product-2.jpg" alt="Masque réparateur">
+          </div>
+
+          <h3>Masque réparateur</h3>
+          <span class="boutique-price">2800 DA</span>
+          <button class="boutique-btn-cart">Ajouter au panier</button>
+        </a>
+
+        <!-- PRODUIT 3 -->
+        <a href="produit.html"
+           class="boutique-card"
+           data-type="serum"
+           data-hair="sec gras">
+
+          <div class="boutique-image">
+            <img src="product-3.jpg" alt="Sérum capillaire">
+          </div>
+
+          <h3>Sérum capillaire</h3>
+          <span class="boutique-price">2000 DA</span>
+          <button class="boutique-btn-cart">Ajouter au panier</button>
+        </a>
+   <!-- PRODUIT 4 -->
+        <a href="produit.html"
+           class="boutique-card"
+           data-type="serum"
+           data-hair="sec gras">
+
+          <div class="boutique-image">
+            <img src="product-4.jpg" alt="Masque hydratant">
+          </div>
+
+          <h3>Masque hydratant</h3>
+          <span class="boutique-price">2000 DA</span>
+          <button class="boutique-btn-cart">Ajouter au panier</button>
+        </a>
+         <!-- PRODUIT 5 -->
+        <a href="produit.html"
+           class="boutique-card"
+           data-type="serum"
+           data-hair="sec abimes">
+
+          <div class="boutique-image">
+            <img src="product-5.jpg" alt="Shampooing hydratant">
+          </div>
+
+          <h3>Shampooing hydratant</h3>
+          <span class="boutique-price">2000 DA</span>
+          <button class="boutique-btn-cart">Ajouter au panier</button>
+        </a>
+              <!-- PRODUIT 6 -->
+        <a href="produit.html"
+           class="boutique-card"
+           data-type="serum"
+           data-hair="sec abimes">
+
+          <div class="boutique-image">
+            <img src="product-6.jpg" alt="serum hydratant">
+          </div>
+
+          <h3>serum hydratant</h3>
+          <span class="boutique-price">2000 DA</span>
+          <button class="boutique-btn-cart">Ajouter au panier</button>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+  <!-- JS -->
+  <script src="main.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      /* HEADER */
+      fetch("partials/header.html")
+        .then(r => r.text())
+        .then(html => {
+          document.getElementById("header").innerHTML = html;
+          lucide.createIcons();
+        });
+
+      fetch("partials/hero.html")
+        .then(r => r.text())
+        .then(html => {
+          document.getElementById("hero").innerHTML = html;
+
+          document.getElementById("hero-title").innerHTML =
+            "Notre boutique <br><span>soins & rituels capillaires</span>";
+
+          document.getElementById("hero-text").innerText =
+            "Découvrez nos produits premium conçus pour sublimer vos cheveux.";
+        });
+          /* ===== BOTTOM NAV ===== */
+  fetch("partials/bottom-nav.html")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("bottom-nav").innerHTML = html;
+
+      // 🔥 شغّل lucide بعد الحقن
+      lucide.createIcons();
+
+      // 🔥 active state
+      const links = document.querySelectorAll(".bottom-nav a");
+      links.forEach(link => {
+        link.addEventListener("click", () => {
+          links.forEach(l => l.classList.remove("active"));
+          link.classList.add("active");
+        });
+      });
+    });
+
+      /* FOOTER */
+      fetch("partials/footer.html")
+        .then(r => r.text())
+        .then(html => {
+          document.getElementById("footer").innerHTML = html;
+                lucide.createIcons();
+
+        });
+
+      /* FILTER LOGIC */
+      const filters = document.querySelectorAll(".boutique-filter select");
+      const cards = document.querySelectorAll(".boutique-card");
+
+      filters.forEach(filter => {
+        filter.addEventListener("change", applyFilters);
+      });
+
+      function applyFilters() {
+        const type = document.querySelector('[data-filter="type"]').value;
+        const hair = document.querySelector('[data-filter="hair"]').value;
+
+        cards.forEach(card => {
+          const cardType = card.dataset.type;
+          const cardHair = card.dataset.hair;
+
+          let visible = true;
+
+          if (type !== "all" && cardType !== type) visible = false;
+          if (hair !== "all" && !cardHair.includes(hair)) visible = false;
+
+          card.style.display = visible ? "block" : "none";
+        });
+      }
+
+    });
+  </script>
+
+</body>
+</html>

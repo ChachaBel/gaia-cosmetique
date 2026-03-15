@@ -1,0 +1,263 @@
+/* =========================
+   PRODUCT PAGE – GAIA
+========================= */
+
+.pd-page {
+  background: #5b2333;
+  color: #fff;
+}
+
+h1, h2, h3, p, span, li {
+  color: #fff;
+}
+
+h1 {
+  font-family: 'Edu NSW ACT Hand Cursive', cursive;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.pd-hero {
+  padding: 4rem 1rem;
+}
+
+.pd-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.pd-image {
+  background: rgba(255,255,255,0.08);
+  border-radius: 28px;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.pd-image img {
+  max-width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+}
+
+.pd-info {
+  max-width: 520px;
+}
+
+.pd-brand {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.7;
+}
+
+.pd-info h1 {
+  font-size: 2.2rem;
+  margin: 0.8rem 0 1rem;
+}
+
+.pd-short {
+  font-size: 1rem;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.pd-price {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 1.6rem 0;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.pd-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pd-btn {
+  background: #fff;
+  color: #5b2333;
+  border: none;
+  padding: 0.9rem 2.6rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pd-btn:hover {
+  transform: translateY(-2px);
+}
+
+.pd-btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.7);
+  color: #fff;
+}
+
+/* =========================
+   TAGS
+========================= */
+
+.pd-tags {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.pd-tags span {
+  background: rgba(255,255,255,0.15);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.pd-content {
+  background: rgba(255,255,255,0.06);
+  padding: 4rem 1.5rem;
+  border-radius: 36px 36px 0 0;
+  margin-top: 4rem;
+}
+
+.pd-block {
+  max-width: 820px;
+  margin: 0 auto 3rem;
+}
+
+.pd-block h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.pd-block p {
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* =========================
+   ACTIFS
+========================= */
+
+.pd-actifs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  gap: 1.2rem;
+}
+
+.pd-actifs div {
+  background: rgba(255,255,255,0.1);
+  padding: 1.4rem;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.pd-actifs strong {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+/* =========================
+   LIST
+========================= */
+
+.pd-list {
+  list-style: none;
+  padding: 0;
+}
+
+.pd-list li {
+  padding-left: 1.4rem;
+  position: relative;
+  margin-bottom: 0.7rem;
+}
+
+.pd-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #fff;
+}
+
+/* =========================
+   BADGES
+========================= */
+
+.pd-badges {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.pd-badges span {
+  background: rgba(255,255,255,0.15);
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.pd-cta {
+  background: rgba(0,0,0,0.15);
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.pd-cta p {
+  max-width: 760px;
+  margin: auto;
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .pd-hero {
+    padding: 2.5rem 1rem;
+  }
+
+  .pd-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .pd-info {
+    margin: auto;
+  }
+
+  .pd-info h1 {
+    font-size: 1.8rem;
+  }
+
+  .pd-actions {
+    justify-content: center;
+  }
+
+  .pd-image img {
+    max-height: 280px;
+  }
+
+  .pd-content {
+    padding: 3rem 1.2rem;
+  }
+}

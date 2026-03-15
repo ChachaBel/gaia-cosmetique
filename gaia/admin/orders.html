@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commandes - GAIA Admin</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="sidebar">
+      <div class="logo">GAIA ADMIN</div>
+
+      <nav class="sidebar-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="orders.html" class="active">Commandes</a>
+        <a href="products.html">Produits</a>
+        <a href="add-product.html">Ajouter Produit</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <h1>Commandes</h1>
+        <p>Gérez toutes les commandes des clients</p>
+      </header>
+
+      <section class="panel">
+        <div class="panel-header between">
+          <h2>Liste des commandes</h2>
+          <input type="text" class="search-input" placeholder="Rechercher une commande..." />
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Client</th>
+                <th>Téléphone</th>
+                <th>Produit</th>
+                <th>Adresse</th>
+                <th>Quantité</th>
+                <th>Statut</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="ordersTableBody">
+              <tr>
+                <td>Amine</td>
+                <td>0550000000</td>
+                <td>Hydra Hair</td>
+                <td>Alger</td>
+                <td>2</td>
+                <td><span class="status pending">En attente</span></td>
+                <td>
+                  <button class="btn small">Voir</button>
+                  <button class="btn-outline small">Modifier</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Sara</td>
+                <td>0661111111</td>
+                <td>Vitamino Hair</td>
+                <td>Oran</td>
+                <td>1</td>
+                <td><span class="status shipped">Expédiée</span></td>
+                <td>
+                  <button class="btn small">Voir</button>
+                  <button class="btn-outline small">Modifier</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Lina</td>
+                <td>0772222222</td>
+                <td>Baume hydratant</td>
+                <td>Blida</td>
+                <td>3</td>
+                <td><span class="status delivered">Livrée</span></td>
+                <td>
+                  <button class="btn small">Voir</button>
+                  <button class="btn-outline small">Modifier</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

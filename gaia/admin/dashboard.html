@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - GAIA</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="sidebar">
+      <div class="logo">GAIA ADMIN</div>
+
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="orders.html">Commandes</a>
+        <a href="products.html">Produits</a>
+        <a href="add-product.html">Ajouter Produit</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <h1>Dashboard</h1>
+        <p>Bienvenue dans le panneau d'administration</p>
+      </header>
+
+      <section class="stats-grid">
+        <div class="stat-card">
+          <h3>Total Produits</h3>
+          <p id="productsCount">12</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Total Commandes</h3>
+          <p id="ordersCount">8</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Rupture de Stock</h3>
+          <p id="outOfStockCount">3</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Commandes En attente</h3>
+          <p id="pendingOrdersCount">5</p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Dernières commandes</h2>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Client</th>
+                <th>Produit</th>
+                <th>Téléphone</th>
+                <th>Statut</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Amine</td>
+                <td>Hydra Hair</td>
+                <td>0550000000</td>
+                <td><span class="status pending">En attente</span></td>
+              </tr>
+              <tr>
+                <td>Sara</td>
+                <td>Vitamino Hair</td>
+                <td>0661111111</td>
+                <td><span class="status shipped">Expédiée</span></td>
+              </tr>
+              <tr>
+                <td>Lina</td>
+                <td>Baume hydratant</td>
+                <td>0772222222</td>
+                <td><span class="status delivered">Livrée</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

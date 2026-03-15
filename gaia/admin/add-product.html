@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ajouter Produit - GAIA Admin</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="sidebar">
+      <div class="logo">GAIA ADMIN</div>
+
+      <nav class="sidebar-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="orders.html">Commandes</a>
+        <a href="products.html">Produits</a>
+        <a href="add-product.html" class="active">Ajouter Produit</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <h1>Ajouter un produit</h1>
+        <p>Ajoutez un nouveau produit à votre boutique</p>
+      </header>
+
+      <section class="panel form-panel">
+        <form id="addProductForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="productName">Nom du produit</label>
+              <input type="text" id="productName" placeholder="Ex: Hydra Hair" />
+            </div>
+
+            <div class="form-group">
+              <label for="productPrice">Prix</label>
+              <input type="number" id="productPrice" placeholder="Ex: 3500" />
+            </div>
+
+            <div class="form-group full">
+              <label for="productImage">Image URL</label>
+              <input type="text" id="productImage" placeholder="https://..." />
+            </div>
+
+            <div class="form-group full">
+              <label for="productDescription">Description</label>
+              <textarea id="productDescription" rows="5" placeholder="Description du produit"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="productStock">Stock</label>
+              <select id="productStock">
+                <option value="Disponible">Disponible</option>
+                <option value="Rupture de stock">Rupture de stock</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="productCategory">Catégorie</label>
+              <select id="productCategory">
+                <option value="Cheveux">Cheveux</option>
+                <option value="Peau">Peau</option>
+                <option value="Corps">Corps</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn">Ajouter le produit</button>
+            <button type="reset" class="btn-outline">Réinitialiser</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
