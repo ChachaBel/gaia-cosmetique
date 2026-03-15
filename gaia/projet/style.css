@@ -1,0 +1,1159 @@
+/*:root {
+  --bg: #f7e9e6;
+  --white: #ffffff;
+  --text: #1f1f1f;
+  --rose: #e6b7bf;
+}*/
+:root {
+  /* Brand colors – Modern Premium */
+  --bg: #EDEDED;              /* Gris clair (background عام) */
+  --white: #FFFFFF;           /* Blanc */
+  --text: #1C1C1C;            /* Noir doux */
+  --muted-text: #5F5F5F;      /* Gris للنصوص الثانوية */
+  --rose: #b85a73;            /* Nude rosé (accent) */
+  --rose-dark: #602437;        /* Nude rosé أغمق (hover / focus) */
+  --border-soft: rgba(28,28,28,0.08);
+
+  /* Shadows – أعمق شوية باش يعطي قوة */
+  --shadow-soft: 0 18px 40px rgba(28,28,28,0.10);
+  --shadow-strong: 0 32px 70px rgba(28,28,28,0.18);
+}
+
+body {
+  font-family: "Libre Baskerville", serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: "Libre Baskerville", serif;
+  letter-spacing: -0.4px;
+  color: var(--text);
+}
+
+p {
+  color: var(--muted-text);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}*/
+/* TOP BAR */
+.top-bar {
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+
+    background: #602437;
+  font-family: "Libre Baskerville", serif;
+  animation: fadeDown 0.8s ease;
+
+}
+
+.top-bar p {
+  margin: 03;
+      color: #ffffff;
+
+}
+
+
+.header {
+  background: var(--white);
+ 
+}
+
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* HEADER */
+.header {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.logo {
+  font-family: 'Edu NSW ACT Hand Cursive', cursive;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #1c1c1c;
+}
+.icons
+{
+   display: flex;
+  gap: 1rem;              /* 👈 المسافة بين الأيقونات */
+  justify-content: center;
+}
+.icons i {
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.6;
+  color: #1c1c1c; /* noir doux */
+  margin-left: 1.4rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.icons i:hover {
+  color: var(--rose-dark);
+  transform: translateY(-2px);
+}
+
+
+
+/* ==========================
+   NAV LINKS
+========================== */
+
+.nav {
+  display: flex;
+  gap: 2.2rem;
+}
+
+.nav a {
+  position: relative;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  color: #444;
+  letter-spacing: 0.3px;
+  padding: 4px 0;
+  transition: color 0.3s ease;
+}
+
+/* hover color */
+.nav a:hover {
+  color: var(--rose-dark);
+}
+
+/* underline animation */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--rose), var(--rose-dark));
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s ease;
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* active link */
+nav a.active {
+    color: #602437;
+  font-weight: 500;
+}
+
+/* HERO */
+.hero {
+  height: 80vh;
+background: url("logo.png") center/cover no-repeat;
+  position: relative;
+}
+
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 8%;
+}
+
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 4rem;
+}
+.hero h1 span {
+  color: var(--rose-dark);
+}
+
+/*.hero h1 span {
+  color: #a66;
+}*/
+
+.hero p {
+  margin: 1rem 0;
+}
+
+.btn {
+  width: fit-content;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+    background: var(--rose);
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background: var(--rose-dark);
+  transform: translateY(-2px);
+}
+.hero h1,
+.hero p,
+.hero .btn {
+  opacity: 0;
+  animation: heroFade 1s ease forwards;
+}
+
+.hero p {
+  animation-delay: 0.2s;
+}
+
+.hero .btn {
+  animation-delay: 0.4s;
+}
+
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+h1, h2, h3 {
+  font-family: "Playfair Display", serif;
+  letter-spacing: -0.5px;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+}
+
+.hero p {
+  max-width: 480px;
+  font-size: 1.05rem;
+  color: #555;
+}
+
+.nav a {
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+}
+/* ==========================
+   SECTION 2 – SPLIT WOW
+========================== */
+
+.brand-split {
+  background: var(--white);
+  padding: 5.5rem 0;
+  overflow-x: hidden;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+
+.brand-split-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(340px, 420px) 1fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+/* IMAGE */
+.brand-split-image img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.16);
+  animation: imageReveal 1.2s ease forwards;
+}
+
+/* TEXT */
+.brand-split-text,
+.brand-split-image img {
+  opacity: 1;
+}
+
+.animate-image {
+  animation: imageReveal 1.2s ease forwards;
+}
+
+.animate-text {
+  animation: textSlide 1.1s ease forwards;
+}
+
+.animate-list li {
+  animation: listReveal 0.7s ease forwards;
+}
+
+
+
+.brand-tag {
+  display: inline-block;
+  margin-bottom: 0.9rem;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: var(--rose-dark);
+  box-shadow: var(--shadow-strong);
+
+  text-transform: uppercase;
+}
+
+.brand-split-text h2 {
+  font-family: 'Edu NSW ACT Hand Cursive', cursive;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+}
+
+.brand-split-text h2 span {
+  color: #ff5d8f;
+}
+
+.brand-lead {
+    color: var(--muted-text);
+
+  max-width: 520px;
+  margin-bottom: 2.3rem;
+  line-height: 1.7;
+}
+
+/* LIST */
+.brand-list {
+  list-style: none;
+  padding: 0;
+}
+
+.brand-list li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 1rem;
+  color: #444;
+  opacity: 0;
+  animation: listReveal 0.7s ease forwards;
+}
+
+.brand-list li:nth-child(1) { animation-delay: 0.7s; }
+.brand-list li:nth-child(2) { animation-delay: 0.9s; }
+.brand-list li:nth-child(3) { animation-delay: 1.1s; }
+
+.brand-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff5d8f;
+}
+
+/* ANIMATIONS */
+@keyframes imageReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes textSlide {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes listReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 980px) {
+  .brand-split-wrap {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .brand-split-image {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .brand-lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .brand-list li {
+    padding-left: 0;
+  }
+
+  .brand-list li::before {
+    display: none;
+  }
+}
+
+
+
+
+/* ==========================
+   PRODUCTS SECTION
+========================== */
+
+.products-section {
+  background: #602437;
+  padding: 3rem 0;
+}
+
+.products-title {
+  text-align: center;
+  font-family: 'Edu NSW ACT Hand Cursive', cursive;
+  font-size: 2.6rem;
+  margin-bottom: 3.5rem;
+  color: #ffffff;
+}
+
+/* ==========================
+   GRID
+========================== */
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+/* ==========================
+   CARD
+========================== */
+
+.product-card {
+  position: relative;
+  box-shadow: var(--shadow-soft);
+    border-radius: 32px;
+  padding: 2.2rem 1.6rem;
+  text-align: center;
+  text-decoration: none;
+  color: #222;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+  overflow: hidden;
+
+  transform: translateY(40px);
+  opacity: 0;
+
+  transition:
+    transform 0.6s cubic-bezier(.4,0,.2,1),
+    box-shadow 0.6s cubic-bezier(.4,0,.2,1),
+    opacity 0.6s ease;
+}
+
+.product-card.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.product-card:hover {
+  transform: translateY(-12px);
+
+  box-shadow: var(--shadow-strong);
+}
+
+/* ==========================
+   IMAGE
+========================== */
+
+.product-image {
+  position: relative;
+  height: 340px;          /* 👈 كبرنا المساحة */
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image img {
+  width: auto;
+  height: 100%;           /* 👈 الصورة تعمّر كامل الارتفاع */
+  max-height: 320px;      /* 👈 تحكم في أقصى حجم */
+  object-fit: contain;
+  transition: transform 0.45s ease, opacity 0.4s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-strong);
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.03);
+}
+
+/* ==========================
+   TEXT
+========================== */
+
+.product-card h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+      color: #ffffff;
+
+  margin: 1.3rem 0 0.4rem;
+  letter-spacing: 0.2px;
+}
+
+.price {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+    color: #ffffff;
+  margin-bottom: 1.4rem;
+}
+
+/* ==========================
+   BUTTON (micro animation)
+========================== */
+
+.btn-cart {
+  position: relative;
+    background: linear-gradient(135deg, var(--rose), var(--rose-dark));
+
+  border: none;
+  padding: 0.7rem 2rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  color: #fff;
+  overflow: hidden;
+
+  transition: all 0.35s ease;
+}
+
+.btn-cart::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.5), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.product-card:hover .btn-cart {
+  transform: translateY(-3px) scale(1.06);
+}
+
+.product-card:hover .btn-cart::after {
+  opacity: 1;
+}
+
+/* ==========================
+   BADGES
+========================== */
+
+.badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.7rem;
+  border-radius: 999px;
+  font-family: "Inter", sans-serif;
+  z-index: 2;
+}
+
+.badge.new {
+  background: linear-gradient(135deg, #e6b7bf, #c98d97);
+  color: #fff;
+}
+
+.badge.best {
+  background: linear-gradient(135deg, #333, #000);
+  color: #fff;
+}
+
+/* ==========================
+   MORE BUTTON
+========================== */
+
+.products-more {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.btn-more {
+  padding: 0.9rem 2.6rem;
+  border-radius: 999px;
+  border: 1px solid #e6b7bf;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.btn-more:hover {
+  background: #e6b7bf;
+  color: #333;
+}
+
+/* ==========================
+   RESPONSIVE (Luxury Mobile)
+========================== */
+
+
+
+
+
+/* ==========================
+   AVIS CLIENTS - MARQUEE
+========================== */
+
+.avis {
+  background: linear-gradient(180deg, #ffffff 0%, #f9ece8 100%);
+  padding: 5.5rem 0 4.5rem;
+  overflow: hidden;
+}
+
+.avis-title {
+  text-align: center;
+  font-family: 'Edu NSW ACT Hand Cursive', cursive;
+  font-size: 2.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.avis-subtitle {
+  text-align: center;
+  color: #666;
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+  font-family: "Inter", sans-serif;
+}
+
+/* Marquee area */
+.avis-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 0.5rem 0;
+}
+
+/* gradient fade edges */
+.avis-marquee::before,
+.avis-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.avis-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, #f9ece8, rgba(249,236,232,0));
+}
+
+.avis-marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, #f9ece8, rgba(249,236,232,0));
+}
+
+.avis-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: avisScroll 28s linear infinite;
+}
+
+/* توقف كي تديري hover (اختياري) */
+.avis-marquee:hover .avis-track {
+  animation-play-state: paused;
+}
+
+@keyframes avisScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Card */
+.avis-card {
+  width: 320px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 26px;
+  padding: 1.4rem 1.4rem 1.2rem;
+    border: 2px solid #602437; /* Wine Plum soft */
+  box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+  font-family: "Inter", sans-serif;
+}
+
+.avis-card p {
+  color: #444;
+  line-height: 1.6;
+  margin: 0.8rem 0 1rem;
+  font-size: 0.95rem;
+}
+
+
+.avis-card .name {
+    color: #602437;
+  font-size: 0.85rem;
+}
+
+.stars {
+  color: #a66;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+
+
+
+/* Footer */
+/* ==========================
+   FOOTER
+========================== */
+
+.footer {
+  background: #602437;
+  padding: 4.5rem 0 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+}
+
+/* Brand */
+.footer-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+  color: #fff;
+}
+
+.footer-brand p {
+  font-family: "Inter", sans-serif;
+  color: #fff;
+  line-height: 1.7;
+  max-width: 320px;
+}
+
+/* Links */
+.footer-links h4,
+.footer-social h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #a66;
+}
+.social-icons {
+  display: flex;
+  gap: 1rem;              /* 👈 المسافة بين الأيقونات */
+  justify-content: center; /* ولا flex-start إذا حابهم على اليسار */
+  margin-top: 1rem;
+}
+
+
+.social-icons a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+    background: #b85a73;
+      display: flex;
+  align-items: center;
+      color: white;
+  justify-content: center;
+  transition: all 0.35s ease;
+}
+
+.social-icons i {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.6;
+  color: #fff;
+}
+
+.social-icons a:hover {
+  background: var(--rose);
+  transform: translateY(-4px);
+}
+
+
+
+/* Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.footer-bottom p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 3.5rem 1.5rem 2rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-brand p {
+    max-width: 100%;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-grid,
+  .product-grid,
+  .testimonial-grid,
+  .categories {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 900px) {
+  .brand-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .brand-story h2 {
+    font-size: 2.4rem;
+  }
+
+  .brand-story {
+    text-align: center;
+  }
+
+  .brand-story p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ==========================
+   BOTTOM NAV - MOBILE
+========================== */
+
+.bottom-nav {
+  display: none;
+}
+
+/* ==========================
+   MOBILE ONLY
+========================== */
+@media (max-width: 768px) {
+
+  /* ===== GLOBAL ===== */
+  body {
+    padding-bottom: 80px; /* space for bottom nav */
+  }
+
+  /* ===== HEADER ===== */
+  .nav,
+  .icons {
+    display: none;
+  }
+
+  
+   .header-inner {
+    justify-content: center;
+  }
+
+  .logo {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.5rem;
+
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 60vh;
+    height: auto;
+  }
+
+  .hero-overlay {
+    padding: 0 1.5rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+    max-width: 90%;
+  }
+
+  /* ===== SECTION 2 ===== */
+  .brand-split {
+    padding: 4rem 1.5rem;
+  }
+
+  .brand-split-wrap {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .brand-split-image {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .brand-split-image img,
+  .brand-split-text {
+
+    transform: translateY(25px);
+    animation: mobileFadeUp 0.9s ease forwards;
+  }
+
+  .brand-split-text {
+    animation-delay: 0.15s;
+  }
+
+  /* ===== PRODUCTS ===== */
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .product-card {
+        transform: translateY(30px);
+    animation: mobileCardUp 0.8s ease forwards;
+  }
+
+  .product-card:nth-child(1) { animation-delay: 0.1s; }
+  .product-card:nth-child(2) { animation-delay: 0.25s; }
+  .product-card:nth-child(3) { animation-delay: 0.4s; }
+  .product-card:nth-child(4) { animation-delay: 0.55s; }
+
+  .img-hover {
+    display: none;
+  }
+
+  .btn-cart {
+    width: 100%;
+  }
+
+  /* ===== AVIS ===== */
+  .avis-card {
+    width: 260px;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 68px;
+  background: rgba(255,255,255,0.97);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  z-index: 999;
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.08);
+}
+
+/* links */
+.bottom-nav a {
+  position: relative;
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  color: #777;
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 0;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+/* icon */
+.bottom-nav .icon {
+  font-size: 1.35rem;
+  transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+}
+
+/* active icon lift */
+.bottom-nav a.active .icon {
+  transform: translateY(-6px) scale(1.18);
+}
+
+/* text */
+.bottom-nav small {
+  font-size: 0.65rem;
+  transition: opacity 0.3s ease;
+}
+
+/* DOT indicator */
+.bottom-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--rose-dark);
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s ease;
+}
+
+.bottom-nav a.active::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* LINE indicator */
+.nav-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  width: 20%;
+  background: linear-gradient(90deg, var(--rose), var(--rose-dark));
+  border-radius: 999px;
+  transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+}
+
+/* RIPPLE effect */
+.bottom-nav a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(214,154,166,0.35) 10%, transparent 60%);
+  opacity: 0;
+  transform: scale(0.2);
+  transition: transform 0.45s ease, opacity 0.45s ease;
+}
+
+.bottom-nav a:active::before {
+  opacity: 1;
+  transform: scale(1.8);
+}
+
+/* press feedback */
+.bottom-nav a:active {
+  transform: scale(0.92);
+}
+
+/* active color */
+.bottom-nav a.active,
+.bottom-nav a:hover {
+  color: var(--rose-dark);
+}
+
+
+}

@@ -1,80 +1,43 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Produits - GAIA Admin</title>
-  <link rel="stylesheet" href="admin.css" />
-</head>
-<body>
-  <div class="admin-layout">
-    <aside class="sidebar">
-      <div class="logo">GAIA ADMIN</div>
+<h1>Produits</h1>
 
-      <nav class="sidebar-nav">
-        <a href="dashboard.html">Dashboard</a>
-        <a href="orders.html">Commandes</a>
-        <a href="products.html" class="active">Produits</a>
-        <a href="add-product.html">Ajouter Produit</a>
-      </nav>
-    </aside>
+<div id="products"></div>
 
-    <main class="main-content">
-      <header class="topbar">
-        <h1>Produits</h1>
-        <p>Consultez et modifiez vos produits</p>
-      </header>
+<script type="module">
 
-      <section class="panel">
-        <div class="panel-header between">
-          <h2>Liste des produits</h2>
-          <a href="add-product.html" class="btn-link">+ Ajouter un produit</a>
-        </div>
+import { db } from "../firebase/firebase.js"
+import { collection, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"
 
-        <div class="products-grid">
-          <div class="product-card">
-            <img src="product-2.jpg" alt="Hydra Hair" />
-            <h3>Hydra Hair</h3>
-            <p class="product-price">3500 DA</p>
-            <p class="product-desc">Shampoing fix &amp; bouclage NSF</p>
-            <span class="badge available">Disponible</span>
+const productsContainer = document.getElementById("products")
 
-            <div class="card-actions">
-              <button class="btn small">Modifier</button>
-              <button class="btn-danger small">Supprimer</button>
-            </div>
-          </div>
+const querySnapshot = await getDocs(collection(db,"products"))
 
-          <div class="product-card">
-            <img src="product-3.jpg" alt="Vitamino Hair" />
-            <h3>Vitamino Hair</h3>
-            <p class="product-price">4200 DA</p>
-            <p class="product-desc">Soin nutrition intense cheveux secs</p>
-            <span class="badge out">Rupture de stock</span>
+querySnapshot.forEach((docu)=>{
 
-            <div class="card-actions">
-              <button class="btn small">Modifier</button>
-              <button class="btn-danger small">Supprimer</button>
-            </div>
-          </div>
+const data = docu.data()
 
-          <div class="product-card">
-            <img src="product-1.jpg" alt="Baume hydratant" />
-            <h3>Baume hydratant</h3>
-            <p class="product-price">2800 DA</p>
-            <p class="product-desc">Apaise la peau et renforce la barrière cutanée</p>
-            <span class="badge available">Disponible</span>
+productsContainer.innerHTML += `
 
-            <div class="card-actions">
-              <button class="btn small">Modifier</button>
-              <button class="btn-danger small">Supprimer</button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>
+<div class="product">
 
-  <script src="admin.js"></script>
-</body>
-</html>
+<img src="${data.image}" width="80">
+
+<h3>${data.name}</h3>
+
+<p>${data.price} DA</p>
+
+<button onclick="deleteProduct('${docu.id}')">Supprimer</button>
+
+</div>
+
+`
+
+})
+
+window.deleteProduct = async function(id){
+
+await deleteDoc(doc(db,"products",id))
+
+location.reload()
+
+}
+</script>

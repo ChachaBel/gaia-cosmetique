@@ -1,0 +1,25 @@
+<div id="cart-items"></div>
+
+<script>
+
+const cart = JSON.parse(localStorage.getItem("cart")) || []
+
+const container = document.getElementById("cart-items")
+
+cart.forEach(product => {
+
+container.innerHTML += `
+<div class="cart-product">
+
+<img src="${product.image}" width="80">
+
+<h3>${product.name}</h3>
+
+<p>${product.price} DA</p>
+
+</div>
+`
+
+})
+
+</script>

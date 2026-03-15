@@ -1,0 +1,180 @@
+/* ==========================
+   BOUTIQUE PAGE
+========================== */
+
+.boutique-page {
+  background: #fff;
+  padding-bottom: 6rem;
+}
+
+/* ==========================
+   HERO BOUTIQUE
+========================== */
+
+.boutique-hero {
+  background: linear-gradient(180deg, #f7e9e6 0%, #f3dedd 100%);
+  padding: 4rem 0 3.5rem;
+  text-align: center;
+}
+
+.boutique-hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.3rem, 4vw, 3rem);
+  margin-bottom: 0.8rem;
+  color: #1f1f1f;
+}
+
+.boutique-hero p {
+  font-family: "Inter", sans-serif;
+  color: #555;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* ==========================
+   PRODUCTS GRID
+========================== */
+
+.boutique-products {
+  padding: 4.5rem 0;
+}
+
+.boutique-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+/* ==========================
+   CARD
+========================== */
+
+.boutique-card {
+  background: #602437;
+  border-radius: 28px;
+  padding: 2.4rem 1.8rem 2.2rem;
+  text-align: center;
+  text-decoration: none;
+  color: #222;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.14);
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+.boutique-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 45px 90px rgba(0,0,0,0.18);
+}
+
+/* ==========================
+   IMAGE (SQUARE)
+========================== */
+
+.boutique-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.4rem;
+}
+
+.boutique-image img {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+}
+
+/* ==========================
+   TEXT
+========================== */
+
+.boutique-card h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 1.2rem 0 0.4rem;
+    color: #fff;
+}
+
+.boutique-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1.4rem;
+  display: block;
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+.boutique-btn-cart {
+  background: linear-gradient(135deg, #e6b7bf, #d39aa6);
+  border: none;
+  padding: 0.75rem 2.2rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* ==========================
+   BADGES
+========================== */
+
+.boutique-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.7rem;
+  border-radius: 999px;
+}
+
+.boutique-badge.new {
+  background: linear-gradient(135deg, #e6b7bf, #c98d97);
+  color: #fff;
+}
+
+.boutique-badge.best {
+  background: linear-gradient(135deg, #1c1c1c, #000);
+  color: #fff;
+}
+/* ==========================
+   FILTER
+========================== */
+
+.boutique-filter {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.boutique-filter select {
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  border: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  cursor: pointer;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 900px) {
+  .boutique-products-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .boutique-products-grid {
+    grid-template-columns: 1fr;
+  }
+}
